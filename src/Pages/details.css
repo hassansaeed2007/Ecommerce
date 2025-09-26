@@ -1,0 +1,165 @@
+/* Whole Page */
+.detail-page {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #f3f3f3);
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Container Card */
+.detail-container {
+  max-width: 1200px;
+  width: 100%;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px 50px;
+  display: flex;
+  align-items: stretch;
+  gap: 70px;
+
+  opacity: 0;
+  transform: translateY(80px);
+  animation: slideFade 0.9s ease-out forwards;
+}
+
+/* Product Image */
+.detail-image {
+  width: 420px;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #ececec;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.detail-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Product Info */
+.detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222831;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.detail-title:hover {
+  color: #ff6b35; /* Accent Orange */
+}
+
+.detail-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #009688; /* Teal */
+  margin: 12px 0 20px 0;
+}
+
+.detail-category {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #00968820;
+  color: #009688;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-bottom: 18px;
+}
+
+.detail-description {
+  margin: 10px 0 20px 0;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #444;
+  max-width: 95%;
+}
+
+/* Back Button */
+.back-button {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 14px 26px;
+  background: #ff6b35;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: #222831;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:active {
+  transform: scale(0.96);
+}
+
+/* Loading Text */
+.loading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 60px;
+  color: #222831;
+}
+
+/* Animation */
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .detail-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    gap: 40px;
+  }
+
+  .detail-image {
+    width: 100%;
+    max-width: 320px;
+    height: 360px;
+    margin: 0 auto;
+  }
+
+  .detail-title {
+    font-size: 2rem;
+  }
+
+  .detail-price {
+    font-size: 1.6rem;
+  }
+
+  .detail-description {
+    font-size: 0.95rem;
+  }
+}
